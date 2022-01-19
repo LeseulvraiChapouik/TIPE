@@ -47,6 +47,11 @@ plt.ylabel("angle de départ")
 plt.xlabel("nb arbes par hectare")
 #plt.show()
 
+#-------------------------------Mesures plan incliné collectif------------------------------------------
+#témoin
+angle=[30,34, 37, 36]
+masse=[261, 990, 2318]
+
 
 #----------------------------------Collectifs Celliers---------------------------------------------------
 
