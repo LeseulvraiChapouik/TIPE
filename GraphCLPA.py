@@ -209,7 +209,7 @@ def Graph(X,Y):
 
 #-------------cacractéristiques physiques des coulées--------------------------------------------------------------------------------------------
 
-def pente():
+def pente(): #comparaison pentes tirées au hazard et pentes coulées 
     Pf=[]
     for k in range(len(Data)):
         if Fh[k]==1:
@@ -226,7 +226,7 @@ def pente():
 
 pente()
 
-def alt():
+def alt(): #nb de coulées en fonction de l'altitude 
     plt.hist((Altmax,Altmoy,Altmin), bins=[k for k in range(1000,4000,250)], edgecolor='black')
     plt.xlabel('Altitude')
     plt.ylabel('nb de coulées')
@@ -238,7 +238,7 @@ def alt():
 
 #alt()
 
-def longueur():
+def longueur(): # nb coulées en fonction de la longueur 
     plt.hist(Longueur, bins=[k for k in range(0,4000,250)], edgecolor='black')
     plt.xlabel('Longueur')
     plt.ylabel('nb de coulées')
@@ -247,7 +247,7 @@ def longueur():
 
 #longueur()
 
-def foret():
+def foret(): # comparaison forêt dans pentes tirées au hazard et dans coulées 
     fch=[]
     for k in range (len(Data)):
         if Fh[k]!=1:
@@ -273,7 +273,7 @@ foret()
 
 # --------------------------------------------------------------------------------------------------------
 
-def compatroncon():
+def compatroncon(): #on ne l'utilise pas 
     f1=[e[2]*100 for e in Data]
     f2=[e[1]*100 for e in Data]
     f3=[e[0]*100 for e in Data]
@@ -291,7 +291,7 @@ def compatroncon():
 
 #compatroncon()
 
-def compatronconalt(altmin,altmax): #comparaison a alt fixée entre altmin et altmax
+def compatronconalt(altmin,altmax): #on ne l'utilise pas #comparaison a alt fixée entre altmin et altmax
     F1,F2,F3 = [],[],[]
     for k in range (len(Data)):
         if altmin<Altmax[k]<altmax:
@@ -324,12 +324,6 @@ def compapente(altmin,altmax): #pente en fonction de prop de foret a alt fixée
 #compapente(1750,2000)
 
 #_____________________________________________________________________________________________________________
-
-
-
-
-
-
 
 
 def moypentelongueur(): #compare les moyenne de pente et de longueur entre les coulées sans foret et les coulées 100pourcent foret
